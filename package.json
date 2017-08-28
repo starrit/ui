@@ -1,0 +1,27 @@
+{
+  "name": "starrit-web-ui",
+  "version": "1.0.0",
+  "description": "Our website front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starrit/ui.git"
+  },
+  "keywords": [
+    "react",
+    "golang",
+    "node",
+    "design",
+    "consultant",
+    "austin"
+  ],
+  "author": "Gregory Starr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starrit/ui/issues"
+  },
+  "homepage": "https://github.com/starrit/ui#readme"
+}
