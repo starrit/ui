@@ -1,0 +1,80 @@
+@import "~styles/variables";
+
+@mixin placeholder($color, $weight: 300, $style: normal) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    font-weight: $weight;
+    font-style: $style;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    font-weight: $weight;
+    font-style: $style;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin text-overflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin verticalMiddleAlign() {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin inputFocus(
+  $border: 1px solid $input-focus-border,
+  $shadow: 0 0 2px 0 rgba($input-focus-border, .7)
+) {
+  &:focus {
+    border: $border;
+    box-shadow: $shadow;
+  }
+}
+
+@mixin inputError(
+  $border: 1px solid $input-error-color,
+  $shadow: 0 0 2px 0 rgba($input-error-color, .7),
+  $focus-shadow: 0 0 2px 0 rgba($input-error-color, .7)
+) {
+  border: $border;
+  box-shadow: $shadow;
+  &:focus {
+    box-shadow: $focus-shadow;
+  }
+}
+
+@mixin defaultInput(
+  $color: black,
+  $weight: 300,
+  $style: normal,
+  $border: 1px solid $input-border-color,
+  $placeholder-color: $input-placeholder,
+  $focus-border: 1px solid $input-focus-border,
+  $focus-shadow: 0 0 2px 0 rgba($input-focus-border, .7)
+) {
+  color: $color;
+  font-weight: $weight;
+  font-style: $style;
+  border: $border;
+  outline: none;
+  border-radius: 3px;
+  font-size: 13.5px;
+  @include placeholder($placeholder-color);
+  @include inputFocus($focus-border, $focus-shadow);
+}

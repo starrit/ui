@@ -1,0 +1,39 @@
+.form-control {
+    @include placeholder($input-placeholder);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid $input-border-color;
+    border-radius: 2px;
+    @at-root {
+        input#{&} {
+            height: 36px;
+        }
+        textarea#{&} {
+            resize: none;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &.has-error {
+        border-color: $error-color;
+    }
+}
+
+.field-wrap {
+    margin-bottom: 14px;
+}
+
+.field-error > p {
+    margin: 5px 0;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: $error-color;
+}
+
+.is-invalid-input {
+    border-color: $error-color !important;
+}

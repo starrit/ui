@@ -1,0 +1,23 @@
+.mainHeading {
+	font-size: 30px;
+	line-height: 34px;
+    color: $primary-text-color;
+    font-weight: 300;
+    margin: 0 0 12px;
+    letter-spacing: 0.3px;
+}
+.default-link {
+    font-size: 10px;
+    line-height: 12px;
+    color: $primary-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:active, &:focus {
+        text-decoration: underline;
+    }
+}
+
+
+p{
+    color: $primary-text-color;
+}

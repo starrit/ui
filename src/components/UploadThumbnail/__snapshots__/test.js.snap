@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UploadThumbnail component should render componenet 1`] = `
+<React.Fragment>
+  <Card
+    className="thumbnailCard"
+  >
+    <Thumbnail
+      className=""
+      default="/assets/images/add_thumbnail.png"
+      src={null}
+    />
+    <input
+      className="thumbnailInput"
+      name=""
+      onChange={[Function]}
+      type="file"
+    />
+  </Card>
+  <P
+    className="thumbnailText"
+  >
+    <span
+      className="thumbnailCopy pullLeft"
+    >
+      Thumbnail
+    </span>
+    <span
+      className="pullRight"
+    >
+      <a
+        className="iconWrap uploadThumbnail"
+        onClick={[Function]}
+      >
+        <Icon
+          className="thumbnailIcons"
+          viewBoxHeight={50}
+          viewBoxWidth={50}
+        >
+          <path
+            d="M45,16.4c-0.3-0.4-0.8-0.7-1.3-0.7H33c-0.9,0-1.7,0.7-1.7,1.6c0,0.9,0.7,1.6,1.7,1.6h9.3v26.3H7.8V19h9.3c0.9,0,1.7-0.7,1.7-1.6c0-0.9-0.7-1.6-1.7-1.6H6.5c-0.5,0-1,0.2-1.3,0.7c-0.3,0.2-0.6,0.7-0.6,1.2v29c0,0.5,0.3,1,0.7,1.3c0.3,0.4,0.8,0.7,1.3,0.7h37.2c0.5,0,1-0.2,1.3-0.7c0.4-0.3,0.7-0.8,0.7-1.3v-29C45.7,17.2,45.4,16.7,45,16.4z M17.3,12.2c0.5,0,0.9-0.1,1.3-0.5l4.7-4.1v20.3c0,0.9,0.8,1.6,1.8,1.6c1,0,1.8-0.7,1.8-1.6V7.2l4.7,4.1c0.7,0.6,1.9,0.6,2.5,0c0.7-0.6,0.7-1.6,0-2.3l-7.6-6.7c-0.7-0.6-1.9-0.6-2.5,0l-8,7c-0.7,0.6-0.7,1.6,0,2.3C16.3,12,16.8,12.2,17.3,12.2z"
+          />
+        </Icon>
+      </a>
+    </span>
+  </P>
+</React.Fragment>
+`;

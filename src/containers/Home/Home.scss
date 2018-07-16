@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.homePageHeader{
+  background: url('assets/images/headers/homepage-hero.jpg') no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.carouselContent{
+  height:300px;
+  background:$carousel-bg url('assets/images/backgrounds/carousel/push2-transparent.png') no-repeat;
+  background-size:cover;
+  margin:0 !important;
+  > div{
+    margin:8px;
+  }
+}
+
+.headings{
+  color:$primary-color
+}

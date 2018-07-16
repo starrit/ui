@@ -1,0 +1,46 @@
+@import '~styles/variables';
+
+.rowInfo {
+  font-style: italic;
+  color: $file-name;
+  font-size: 12px;
+  &:hover, &:focus, &:active {
+    color: $file-name;
+  }
+}
+
+.thumbnail-card {
+  padding: 2px;
+  border: none;
+  height: 75px;
+  width: 75px;
+  background: #fff;
+  position: relative;
+  > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 3px;
+    margin: auto;
+  }
+}
+.infinite-scroll-component {
+  padding-top: 2px;
+}
+.no-data-wrap {
+  text-align: center;
+  border: solid 1px $border-color;
+  border-width: 1px 0;
+  margin: 0 35px;
+  padding: 35px;
+  p {
+    font-weight: 600;
+    text-align: center;
+    color: $item-name;
+  }
+  button {
+    color: $primary-color;
+  }
+}

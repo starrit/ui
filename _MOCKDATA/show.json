@@ -1,0 +1,56 @@
+{
+    "uid": "01959290-DDE8-FB6E-5020-A2639CBDE62A",
+    "url": "https://podcast.ustudio.com/show/01959290-DDE8-FB6E-5020-A2639CBDE62A",
+    "name": "Lorem ipsum dolor",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi",
+    "is_subscribed": "true, false",
+    "artwork_url": "/assets/media/show_thumb.png",
+    "episodes_url": "/show/01959290-DDE8-FB6E-5020-A2639CBDE62A/episodes",
+    "subscription_url": "https://podcast.ustudio.com/show/01959290-DDE8-FB6E-5020-A2639CBDE62A/subscribe",
+    "episodes": [
+      {
+        "uid": "5F59D81F-C089-2397-8CD7-247C1E23B191",
+        "url": "media/5F59D81F-C089-2397-8CD7-247C1E23B191",
+        "title": "Lorem ipsum dolor",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula",
+        "show_uid": "0CCBBCD9-1BE5-471B-2738-B5DB1DC2B642",
+        "image_url": "/assets/media/show_thumb.png",
+        "show_url": "/show/0CCBBCD9-1BE5-471B-2738-B5DB1DC2B642",
+        "published_at": "1510014877",
+        "duration": 42537063
+      },
+      {
+        "uid": "A85A47F7-203E-737D-191D-E06826AB1048",
+        "url": "media/A85A47F7-203E-737D-191D-E06826AB1048",
+        "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque",
+        "show_uid": "40DC85AC-D9A7-C191-75A4-D62CD0FF14C6",
+        "image_url": "/assets/media/show_thumb.png",
+        "show_url": "/show/40DC85AC-D9A7-C191-75A4-D62CD0FF14C6",
+        "published_at": "1550163432",
+        "duration": 5269223
+      },
+      {
+        "uid": "5C7094AB-4902-C2FC-9AD6-D13815C29CC5",
+        "url": "media/5C7094AB-4902-C2FC-9AD6-D13815C29CC5",
+        "title": "Lorem ipsum dolor sit amet, consectetuer",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris,",
+        "show_uid": "287DA923-4352-ADD1-38EB-E491FDF622EA",
+        "image_url": "/assets/media/show_thumb.png",
+        "show_url": "/show/287DA923-4352-ADD1-38EB-E491FDF622EA",
+        "published_at": "1548377579",
+        "duration": 49573692
+      },
+      {
+        "uid": "F52D4AEA-EC42-D052-E637-E1FE8670A5B7",
+        "url": "media/F52D4AEA-EC42-D052-E637-E1FE8670A5B7",
+        "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero",
+        "show_uid": "13A98235-48C0-0E83-5338-6BA40BD5D437",
+        "image_url": "/assets/media/show_thumb_2.png",
+        "show_url": "/show/13A98235-48C0-0E83-5338-6BA40BD5D437",
+        "published_at": "1521447912",
+        "duration": 21319556
+      }
+    ]
+}

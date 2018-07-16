@@ -1,0 +1,38 @@
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    height: 36px;
+    border-radius: 36px;
+    user-select: none;
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+    &:not(.no-transform) {
+        text-transform: lowercase;
+    }
+    &.capitalize {
+        text-transform: capitalize;
+    }
+}
+
+.primary-btn {
+    background: $primary-color;
+    color: $primary-foreground;
+    &:not(:disabled) {
+        &:hover, &:focus {
+            outline: none;
+            background: darken($primary-color, 10);
+        }
+    }
+    &:disabled {
+        background: lighten($primary-color, 20);
+    }
+}

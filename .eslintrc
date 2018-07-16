@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        // To be re-considered.
+        "no-unused-vars": [0, {"vars": "all", "args": "after-used","varsIgnorePattern": "React" }],
+        "single":"single",
+        "linebreak-style": "off"
+    },
+    "globals": {
+        "window": true,
+        "document": true
+    },
+    "parser": "babel-eslint"
+}

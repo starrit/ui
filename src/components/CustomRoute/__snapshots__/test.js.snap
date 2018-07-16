@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomRoute Component should redirect to Login route for non public route 1`] = `
+<div>
+  Login component
+</div>
+`;
+
+exports[`CustomRoute Component should render component correctly 1`] = `
+<p>
+  Page Not Found
+</p>
+`;
+
+exports[`CustomRoute Component should render component with routes 1`] = `
+<div>
+  Auth protected Dummy Component
+</div>
+`;

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ustudio";
+  src: url('#{$font-path}/ustudio.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "ustudio" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="us-icon-"]:before,
+[class*=" us-icon-"]:before {
+  font-family: "ustudio" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.us-icon-close:before {
+  content: "\62";
+}
+.us-icon-download:before {
+  content: "\64";
+}
+.us-icon-edit:before {
+  content: "\65";
+}
+.us-icon-filter:before {
+  content: "\66";
+}
+.us-icon-filter-vertical:before {
+  content: "\67";
+}
+.us-icon-graph:before {
+  content: "\68";
+}
+.us-icon-link:before {
+  content: "\6a";
+}
+.us-icon-list:before {
+  content: "\6b";
+}
+.us-icon-upload-circle:before {
+  content: "\6c";
+}
+.us-icon-search:before {
+  content: "\6d";
+}
+.us-icon-upload:before {
+  content: "\6e";
+}
+.us-icon-settings:before {
+  content: "\6f";
+}
+.us-icon-reply:before {
+  content: "\70";
+}
+.us-icon-record:before {
+  content: "\71";
+}
+.us-icon-person:before {
+  content: "\72";
+}
+.us-icon-add:before {
+  content: "\61";
+}
+.us-icon-back-arrow:before {
+  content: "\73";
+}
+.us-icon-chat-circle:before {
+  content: "\74";
+}
+.us-icon-delete:before {
+  content: "\63";
+}
+.us-icon-grid:before {
+  content: "\69";
+}
+.us-icon-mic:before {
+  content: "\75";
+}
+.us-icon-star:before {
+  content: "\76";
+}
+.us-icon-starfilled:before {
+  content: "\77";
+}

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Validate Util Functions should not return anything 1`] = `null`;
+
+exports[`Validate Util Functions should return jsx element with error message 1`] = `
+<div
+  className="field-error"
+>
+  <p>
+    This field is required
+  </p>
+</div>
+`;
