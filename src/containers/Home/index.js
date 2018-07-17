@@ -11,10 +11,15 @@ import {
   List,
   Menu,
   Responsive,
+  Label,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import CaseCard from "../../components/CaseCard"
+import styles from "./Home.scss"
+import PrimaryNavBar from "../../layout/PrimaryNavigation";
+import {FlexContainer} from "@gstarrltd/fragmented"
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -22,9 +27,10 @@ import {
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
+
     <Header
       as='h1'
-      content='StarrIT Engineering'
+      content='STARRIT ENGINEERING'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -35,7 +41,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Austin local front-end experts.'
+      content='Austin local front end experts.'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -43,7 +49,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
+    <Button size='huge' color="orange">
       Get Started
       <Icon name='right arrow' />
     </Button>
@@ -82,30 +88,10 @@ class DesktopContainer extends Component {
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
+            className={styles.heading}
           >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>Services</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Blog</Menu.Item>
-                <Menu.Item as='a'>Contact us</Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
-                    Request a Quote
-                  </Button>
 
-                </Menu.Item>
-              </Container>
-            </Menu>
+            <PrimaryNavBar fixed={fixed}/>
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -121,9 +107,10 @@ DesktopContainer.propTypes = {
 }
 
 class MobileContainer extends Component {
-  constructor(){
-    super()
-    this.state = {}
+  constructor(props){
+    super(props)
+    this.state = {sidebarOpened:false}
+    this.handleToggle = this.handleToggle.bind(this)
   }
 
   handlePusherClick(){
@@ -142,18 +129,21 @@ class MobileContainer extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
+
+            <Menu.Item as='a'>
+              <Image style={{display:'inline'}} size="small" src='assets/images/logo.png' />
+            </Menu.Item>
             <Menu.Item as='a' active>
               Home
             </Menu.Item>
             <Menu.Item as='a'>Services</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
             <Menu.Item as='a'>Blog</Menu.Item>
             <Menu.Item as='a'>Contact Us</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
             dimmed={sidebarOpened}
-            onClick={this.handlePusherClick}
+            onClick={(e)=>{this.handlePusherClick(e)}}
             style={{ minHeight: '100vh' }}
           >
             <Segment
@@ -163,16 +153,7 @@ class MobileContainer extends Component {
               vertical
             >
               <Container>
-                <Menu inverted pointing secondary size='large'>
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name='sidebar' />
-                  </Menu.Item>
-                  <Menu.Item position='right'>
-                    <Button as='a' inverted>
-                      Request A Quote
-                    </Button>
-                  </Menu.Item>
-                </Menu>
+                 <PrimaryNavBar vertical fixed={false}/>
               </Container>
               <HomepageHeading mobile />
             </Segment>
@@ -205,22 +186,20 @@ const Home = () => (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
-          <Grid.Column width={8}>
+          <Grid.Column width={7}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Handle the UI, so you can get straight to business
+              <p className={styles["plain-text"]}>We Handle the UI, so you can get straight to business</p>
             </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              We know both sides of the fence, so we know the value of time. Let us off site your investment in resources by letting us build out a front-end that suites your needs. We focus on longevity, so we deliver code that integrates into your tech stack, your workflow and most importantly, can be handed off with confidence!
-            </p>
+            <p className={styles["plain-text"]}>We know both sides of the fence, so we know the value of time. Let us off site your investment in resources by letting us build out a front-end that suites your needs. We focus on longevity, so we deliver code that integrates into your tech stack, your workflow and most importantly, can be handed off with confidence!</p>
+
             <Header as='h3' style={{ fontSize: '2em' }}>
               How do you know if you don't test?
             </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Testing? Yeah we do that too! Well tested, both e2e and unit. As well as stylguide and realtime component visulaizations and testing utilities.
-            </p>
+            <p className={styles["plain-text"]}>Testing? Yeah we do that too! Well tested, both e2e and unit. As well as stylguide and realtime component visulaizations and testing utilities.</p>
+
           </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+          <Grid.Column floated='right' width={8}>
+            <Image bordered rounded src='assets/images/js-animated.gif' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -231,20 +210,20 @@ const Home = () => (
       </Grid>
     </Segment>
 
-    <Segment style={{ padding: '0em' }} vertical>
+    <Segment style={{ padding: '0em' }} vertical className={styles.accolades}>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "Their team intergated into ours!"
+            <Header as='h3' style={{ fontSize: '2em' }} color="orange">
+              "We can integrate directly into your team!"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>Finally A company that's locally owned and fits the budget. Oh, and they delivery quality architecture</p>
+            <p className={styles["plain-text"]}>Finally a company that's locally owned and fits the budget. Oh, and they delivery quality architecture</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <Header as='h3' style={{ fontSize: '2em' }}  color="orange">
               "We didn't have to go to India!"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>
+            <p className={styles["plain-text"]}>
               {/*<Image avatar src='/images/avatar/large/nan.jpg' />*/}
               Local, professional, and we received exactly what we needed for our project
             </p>
@@ -252,14 +231,21 @@ const Home = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Divider
+      as='h4'
+      className='header'
+      horizontal
+      style={{ margin: '3em 0em', textTransform: 'uppercase', color:"#207894" }}
+    >
+      Our Process
+    </Divider>
+    <Segment style={{ padding: '2em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Here is where we get real though
+          Requirements change, deliverables change, timelines change. <Label color="orange">THAT'S A FACT</Label>
         </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Requirements change, deliverables change, timelines change. That's a fact. And so do we in pace with your project. This isn't our first rodeo, we communicate first, fail fast, and refactor often. We are highly available and aim high because we know you expect nothing less.
+        <p className={styles["plain-text"]}>
+          And so do we in pace with your project. This isn't our first rodeo, we communicate first, fail fast, and refactor often. We are highly available and aim high because we know you expect nothing less.
         </p>
         <Button as='a' size='large'>
           Our Process
@@ -269,21 +255,33 @@ const Home = () => (
           as='h4'
           className='header'
           horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+          style={{ margin: '3em 0em', textTransform: 'uppercase', color:"#207894" }}
         >
           <a href='#'>Case Studies</a>
         </Divider>
-
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Stand in case
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          es I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's really true. It took years of gene splicing and combinatory DNA recoupling was awesome.
-        </p>
-        <Button as='a' size='large'>
-          Full Details
-        </Button>
       </Container>
+      <Grid container centered columns={2}>
+        <Grid.Column centered >
+          <CaseCard
+            imgSrc="assets/images/clients/bassministry/logo.png"
+            status="ongoing project"
+            subTitle="Austin Local EDM Community"
+            title="Bassministry.com"
+            link="http://www.bassministry.com"
+          />
+        </Grid.Column>
+        <Grid.Column centered >
+          <CaseCard
+            imgSrc="assets/images/Uncle-Sam.jpg"
+            status="future project"
+            subTitle="Be our our next success story"
+            title="Lets work together"
+            link="#"
+          />
+        </Grid.Column>
+      </Grid>
+
+
     </Segment>
 
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
@@ -306,7 +304,7 @@ const Home = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted>
+              <Header as='h4' inverted color="orange">
                 STARRIT ENGINEERING 2018
               </Header>
               <p>

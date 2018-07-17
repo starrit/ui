@@ -6,6 +6,12 @@ html, body {
     box-sizing: border-box;
 }
 
+.plain-text{
+    font-size: 16px;
+    color: rgb(32, 120, 148);
+    font-family: Helvetica;
+}
+
 a.image-link {
     display: inline-block;
     > img {
