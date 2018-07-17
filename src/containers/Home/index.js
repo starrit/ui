@@ -215,17 +215,17 @@ const Home = () => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }} color="orange">
-              "We can integrate directly into your team!"
+              "We can integrate into your workflow!"
             </Header>
-            <p className={styles["plain-text"]}>Finally a company that's locally owned and fits the budget. Oh, and they delivery quality architecture</p>
+            <p className={styles["plain-text"]}>Remote or onsite. Agile or waterfall, We are flexible enough to fit into your workflow. Finally a company that's locally owned and fits the budget. Oh, and we delivery quality architecture that will earn your confidence.</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}  color="orange">
-              "We didn't have to go to India!"
+              "You don't have to go to India!"
             </Header>
             <p className={styles["plain-text"]}>
               {/*<Image avatar src='/images/avatar/large/nan.jpg' />*/}
-              Local, professional, and we received exactly what we needed for our project
+              Local, professional, and we deliver exactly what you need for your project
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -261,7 +261,7 @@ const Home = () => (
         </Divider>
       </Container>
       <Grid container centered columns={2}>
-        <Grid.Column centered >
+        <Grid.Column >
           <CaseCard
             imgSrc="assets/images/clients/bassministry/logo.png"
             status="ongoing project"
@@ -270,7 +270,7 @@ const Home = () => (
             link="http://www.bassministry.com"
           />
         </Grid.Column>
-        <Grid.Column centered >
+        <Grid.Column >
           <CaseCard
             imgSrc="assets/images/Uncle-Sam.jpg"
             status="future project"
