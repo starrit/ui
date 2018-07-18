@@ -21,6 +21,8 @@ import styles from "./Style.scss"
 import PrimaryNavBar from "../../layout/PrimaryNavigation";
 import {FlexContainer} from "@gstarrltd/fragmented"
 import Footer from "../../layout/Footer";
+import {Link} from "react-router-dom";
+import {requestQuote} from "../../services/quoteRequest.service";
 
 class DesktopContainer extends Component {
   constructor(){
@@ -28,6 +30,7 @@ class DesktopContainer extends Component {
     this.state = {};
     this.hideFixedMenu = () => this.setState({ fixed: false })
     this.showFixedMenu = () => this.setState({ fixed: true })
+
   }
 
   render() {
@@ -81,12 +84,12 @@ class MobileContainer extends Component {
             <Menu.Item as='a'>
               <Image style={{display:'inline'}} size="small" src='assets/images/logo.png' />
             </Menu.Item>
-            <Menu.Item as='a' active>
+            <Menu.Item as={Link} to="/" active>
               Home
             </Menu.Item>
-            <Menu.Item as='a'>Services</Menu.Item>
-            <Menu.Item as='a'>Blog</Menu.Item>
-            <Menu.Item as='a'>Contact Us</Menu.Item>
+            <Menu.Item as={Link} to="/services">Services</Menu.Item>
+            <Menu.Item as={Link} to="/blog">Blog</Menu.Item>
+            <Menu.Item as={Link} to="/contact">Contact Us</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
@@ -119,11 +122,44 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const Contact = () => (
-  <ResponsiveContainer>
-    <ContactForm />
-    <Footer/>
-  </ResponsiveContainer>
-)
+class Contact extends Component{
+  constructor(props){
+    super(props)
+    this.makeRequest= this.makeRequest.bind(this);
+    this.state={
+      isLoading:false,
+      success:false
+    }
+  }
+
+
+  makeRequest(e){
+    this.setState({isLoading:true})
+    e.preventDefault()
+    const {firstName,lastName,companyName,email, phone} = e.target.elements;
+    requestQuote("http://localhost:1337/requestQuote", {
+      firstName:firstName.value,
+      lastName:lastName.value,
+      companyName:companyName.value,
+      phone:phone.value,
+      email:email.value,
+      body:body.value
+    }).then((response)=>{
+      this.setState({isLoading:false, success:true})
+    }).catch((err)=>{
+      this.setState({isLoading:false, hasErrors:err})
+    })
+  }
+  render(){
+    return(
+      <ResponsiveContainer>
+        <ContactForm hasErrors={this.state.hasErrors} success={this.state.success} isLoading={this.state.isLoading} onSubmit={this.makeRequest}/>
+        <Footer/>
+      </ResponsiveContainer>
+    )
+  }
+}
+
+
 
 export default Contact

@@ -131,15 +131,14 @@ class MobileContainer extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-
             <Menu.Item as='a'>
               <Image style={{display:'inline'}} size="small" src='assets/images/logo.png' />
             </Menu.Item>
-            <Menu.Item as='a' active>
+            <Menu.Item as={Link} to="/" active>
               Home
             </Menu.Item>
-            <Menu.Item as='a'>Services</Menu.Item>
-            <Menu.Item as='a'>Blog</Menu.Item>
+            <Menu.Item as={Link} to="/services">Services</Menu.Item>
+            <Menu.Item as={Link} to="/blog">Blog</Menu.Item>
             <Menu.Item as={Link} to="/contact">Contact Us</Menu.Item>
           </Sidebar>
 
