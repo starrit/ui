@@ -8,6 +8,7 @@ import {
   Icon
 } from 'semantic-ui-react'
 import styles from "./Styles.scss"
+import {Link} from "react-router-dom"
 
 const HMenu = (props)=>
   <Menu
@@ -24,7 +25,7 @@ const HMenu = (props)=>
     </Menu.Item>
     <Menu.Item as='a'>Services</Menu.Item>
     <Menu.Item as='a'>Blog</Menu.Item>
-    <Menu.Item as='a'>Contact us</Menu.Item>
+    <Menu.Item as={Link} to="/contact">Contact us</Menu.Item>
     <Menu.Item position='right'>
       <Button as='a' size="small" color="orange">
         Request a Quote
@@ -43,7 +44,7 @@ const VMenu = (props)=>
     <Icon name='sidebar' />
   </Menu.Item>
   <Menu.Item position='right'>
-    <Button as='a' inverted>
+    <Button as={Link} to="/contact" inverted>
       Request A Quote
     </Button>
   </Menu.Item>

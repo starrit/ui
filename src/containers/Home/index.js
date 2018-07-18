@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import {Link} from "react-router-dom"
 import {
   Button,
   Container,
@@ -139,7 +140,7 @@ class MobileContainer extends Component {
             </Menu.Item>
             <Menu.Item as='a'>Services</Menu.Item>
             <Menu.Item as='a'>Blog</Menu.Item>
-            <Menu.Item as='a'>Contact Us</Menu.Item>
+            <Menu.Item as={Link} to="/contact">Contact Us</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher

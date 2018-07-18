@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="268" height="46" viewBox="0 0 268 46">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 72px;
+        fill: #fff;
+        font-family: "Atlantis Found";
+      }
+
+      .cls-2 {
+        fill: #34a4ca;
+      }
+    </style>
+  </defs>
+  <text id="logo.svg" class="cls-1" transform="translate(-2.154 44.887) scale(0.869 0.864)">Starr<tspan class="cls-2">IT</tspan></text>
+</svg>
