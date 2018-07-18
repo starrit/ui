@@ -4,19 +4,17 @@ import {
   Button,
   Container,
   Image,
-  Menu
+  Menu,
+  Icon
 } from 'semantic-ui-react'
 import styles from "./Styles.scss"
 
-const HMenu = (fixed, vertical)=><Menu
-  fixed={fixed ? 'top' : null}
-  inverted
-  pointing={!fixed}
-  secondary={!fixed}
-  size='large'
-  as="ul"
-  className={styles.navbar}
-  style={!fixed ?  {  marginTop: "-15px"} : { marginTop: "0"}}
+const HMenu = (props)=>
+  <Menu
+    {...props}
+    size='large'
+    as="ul"
+    className={styles.navbar}
 >
   <Image  floated='left' height="40px" src='assets/images/logo.png' />
   <Container>
@@ -37,8 +35,11 @@ const HMenu = (fixed, vertical)=><Menu
 </Menu>
 
 
-const VMenu = (fixed, vertical)=><Menu inverted pointing secondary size='large'>
-  <Menu.Item onClick={this.handleToggle}>
+const VMenu = (props)=>
+  <Menu inverted pointing size='large'>
+  <Menu.Item onClick={()=>{
+    props.handleToggle()
+  }}>
     <Icon name='sidebar' />
   </Menu.Item>
   <Menu.Item position='right'>
@@ -54,12 +55,17 @@ class PrimaryNavBar extends Component {
   }
 
   render() {
-    const {fixed, vertical} = this.props
+    const {fixed, vertical, style} = this.props
     return (
 
 
       <Fragment >
-        {!vertical ? HMenu() : VMenu}
+        {!vertical ? <HMenu fixed={fixed ? 'top' : null}
+                            inverted
+                            pointing={!fixed}
+                            secondary={!fixed} />
+                   :
+                     <VMenu fixed={fixed} vertical={vertical} handleToggle={this.props.handleToggle}/>}
 
       </Fragment>
     );

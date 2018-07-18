@@ -20,6 +20,7 @@ import CaseCard from "../../components/CaseCard"
 import styles from "./Home.scss"
 import PrimaryNavBar from "../../layout/PrimaryNavigation";
 import {FlexContainer} from "@gstarrltd/fragmented"
+import Footer from "../../layout/Footer";
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -91,7 +92,7 @@ class DesktopContainer extends Component {
             className={styles.heading}
           >
 
-            <PrimaryNavBar fixed={fixed}/>
+            <PrimaryNavBar fixed={this.state.fixed} vertical={false}/>
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -153,7 +154,7 @@ class MobileContainer extends Component {
               vertical
             >
               <Container>
-                 <PrimaryNavBar vertical fixed={false}/>
+                 <PrimaryNavBar vertical fixed={false} handleToggle={()=>this.handleToggle()}/>
               </Container>
               <HomepageHeading mobile />
             </Segment>
@@ -284,37 +285,7 @@ const Home = () => (
 
     </Segment>
 
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Services</List.Item>
-                <List.Item as='a'>About</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Request a quote</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted color="orange">
-                STARRIT ENGINEERING 2018
-              </Header>
-              <p>
-                GET IT DONE RIGHT!
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <Footer />
   </ResponsiveContainer>
 )
 
