@@ -18,11 +18,11 @@ import {
 } from 'semantic-ui-react'
 import ContactForm from "../../components/ContactForm"
 import styles from "./Style.scss"
-import PrimaryNavBar from "../../layout/PrimaryNavigation";
+import PrimaryNavBar from "../../layout/PrimaryNavigation/index.js";
 import {FlexContainer} from "@gstarrltd/fragmented"
 import Footer from "../../layout/Footer";
 import {Link} from "react-router-dom";
-import {requestQuote} from "../../services/quoteRequest.service";
+import {APIRequest} from "../../services/APIRequest.service";
 
 class DesktopContainer extends Component {
   constructor(){
@@ -44,7 +44,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <PrimaryNavBar fixed={false} vertical={false}/>
+          <PrimaryNavBar  fixed={this.state.fixed} vertical={false}/>
         </Visibility>
 
         {children}
@@ -128,7 +128,8 @@ class Contact extends Component{
     this.makeRequest= this.makeRequest.bind(this);
     this.state={
       isLoading:false,
-      success:false
+      success:false,
+      errors:false
     }
   }
 
@@ -137,7 +138,7 @@ class Contact extends Component{
     this.setState({isLoading:true})
     e.preventDefault()
     const {firstName,lastName,companyName,email, phone} = e.target.elements;
-    requestQuote("http://localhost:1337/requestQuote", {
+    APIRequest("http://api.starrit.io/requestQuote/", {
       firstName:firstName.value,
       lastName:lastName.value,
       companyName:companyName.value,
@@ -145,10 +146,16 @@ class Contact extends Component{
       email:email.value,
       body:body.value
     }).then((response)=>{
-      this.setState({isLoading:false, success:true})
+      if(response !== undefined){
+        this.setState({isLoading:false, success:true})
+      }else{
+        this.setState({isLoading:false, success:false, errors:'There was a problem, please email admin@starrit.io'})
+      }
     }).catch((err)=>{
-      this.setState({isLoading:false, hasErrors:err})
+      this.setState({isLoading:false, errors:err})
     })
+
+
   }
   render(){
     return(

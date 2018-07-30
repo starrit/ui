@@ -6,7 +6,6 @@ import { Notifications, FlexContainer } from '@gstarrltd/fragmented';
 import CustomRoute from 'AppComponents/CustomRoute/';
 import userActions from 'AppActions/user';
 import notficationActions from 'AppActions/notifications';
-import UploadMedia from 'AppComponents/UploadMedia';
 import Auth from "./services/Auth";
 import routes from './routes';
 import styles from 'App.scss';
@@ -36,9 +35,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <CustomRoute routes={routes}/>
-
-
-        <UploadMedia />
         <Notifications
           notifications={this.props.notifications}
           hideNotification={this.props.hideNotification}

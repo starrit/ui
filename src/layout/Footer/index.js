@@ -28,7 +28,7 @@ const Footer = (props)=>
           </Grid.Column>
           <Grid.Column width={7}>
             <Header as='h4' inverted color="orange">
-              STARRIT ENGINEERING 2018
+              STARRIT Consulting 2018
             </Header>
             <p>
               GET IT DONE RIGHT!
